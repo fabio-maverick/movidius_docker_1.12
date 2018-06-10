@@ -32,11 +32,19 @@ RUN make install
 #RUN git clone https://github.com/tensorflow/models.git tf-models
 #RUN cd tf-${TF_VERSION} && git checkout ${TF_VERSION} && cd ..
 #ENV TF_SRC_PATH=/tf-${TF_VERSION}
-#ENV TF_MODELS_PATH=/tf-models 
+#ENV TF_MODELS_PATH=/tf-models
 
 # we only check with tensorflow example
 #WORKDIR /ncappzoo/tensorflow
 WORKDIR /ncappzoo/apps
 #RUN make
+
+ENV CCACHE_CPP2=1
+ENV CCACHE_MAXSIZE=1G
+ENV DISPLAY :0
+#ENV PATH "/usr/lib/ccache:$PATH"
+ENV TERM=xterm
+# Some QT-Apps/Gazebo don't not show controls without this
+ENV QT_X11_NO_MITSHM 1
 
 CMD ["bash"]
