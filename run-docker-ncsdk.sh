@@ -6,4 +6,4 @@
 
 # (Working Syntax!!!)
 # tem um link que usava "/dev:/dev:shared" testar depois
-sudo nvidia-docker run -it --privileged --net=host -v /dev:/dev -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix${DISPLAY} ncsdk:ubuntu16.04 /bin/bash
+sudo nvidia-docker run -it --privileged --net=host -v /dev:/dev --name ncsdk -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix${DISPLAY} ncsdk:ubuntu16.04 /bin/bash
