@@ -9,19 +9,23 @@ RUN apt-get install -y git
 RUN apt-get install -y python-pip
 RUN apt-get install -y wget
 RUN apt-get install -y sudo
-RUN apt-get install -y vim
+RUN apt-get install -y nano
 RUN apt-get install -y lsb-release
 RUN apt-get install -y python3-pip
+RUN apt-get install -y zip
+RUN apt-get install -y unzip
 
 RUN git clone https://github.com/movidius/ncsdk.git /ncsdk
 RUN git clone https://github.com/movidius/ncappzoo.git /ncappzoo
 
 RUN pip install --upgrade pip
-RUN pip install tensorflow-gpu==1.4.1
+# RUN pip install tensorflow-gpu==1.4.1
 RUN pip3 install --upgrade pip
 
 # RUN pip3 install opencv-python
 # RUN pip3 install opencv-contrib-python
+
+RUN cd /ncappzoo/apps/video_objects && ./install-opencv-from_source.sh
 
 WORKDIR /ncsdk
 RUN make install
