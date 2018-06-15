@@ -2,6 +2,7 @@ FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 #FROM ubuntu:16.04
 MAINTAINER Fabio Magalhaes<fabio.magalhaes@gmail.com>
 
+ENV HOME /root
 ENV PYTHONPATH /opt/movidius/mvnc/python:${PYTHONPATH}
 ARG TF_VERSION
 
@@ -13,6 +14,7 @@ RUN apt-get install -y sudo
 RUN apt-get install -y nano
 RUN apt-get install -y lsb-release
 RUN apt-get install -y python3-pip
+RUN apt-get install -y unzip
 
 RUN git clone https://github.com/movidius/ncsdk.git /ncsdk
 RUN git clone https://github.com/movidius/ncappzoo.git /ncappzoo
@@ -24,7 +26,7 @@ RUN pip3 install --upgrade pip
 #RUN pip3 install opencv-contrib-python
 
 #Install OpenCV from source
-#WORKDIR ${HOME}
+WORKDIR ${HOME}
 COPY ./scripts/install-opencv-from_source.sh ${HOME}
 #RUN wget https://github.com/fabio-maverick/movidius_docker_1.12/blob/master/run_movidius_nvidia_docker.sh
 #RUN ${HOME}/install-opencv-from_source.sh
