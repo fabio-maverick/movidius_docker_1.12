@@ -5,7 +5,7 @@
 
 NCSDK_NAME=$1
 if [[ -z "${NCSDK_NAME}" ]]; then
-    NCSDK_NAME=movidius_sdk
+    NCSDK_NAME=movidius_sdk_nvidia
 fi
 
 HOST_DATA_DIR=$2
