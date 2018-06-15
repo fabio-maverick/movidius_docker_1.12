@@ -1,4 +1,4 @@
-s#!/bin/bash
+#!/bin/bash
 #
 
 # Copyright (c) 2017, NVIDIA CORPORATION. All rights reserved.
