@@ -35,6 +35,7 @@
 	cmake -D CMAKE_BUILD_TYPE=RELEASE \
 	      -D CMAKE_INSTALL_PREFIX=/usr/local \
 	      -D INSTALL_PYTHON_EXAMPLES=OFF \
+				-D WITH_CUDA=OFF \
 	      -D WITH_V4L=ON \
 	      -D BUILD_opencv_cnn_3dobj=OFF \
 	      -D BUILD_opencv_dnn_modern=OFF \
