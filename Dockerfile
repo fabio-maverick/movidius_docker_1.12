@@ -24,9 +24,9 @@ RUN pip3 install --upgrade pip
 #RUN pip3 install opencv-contrib-python
 
 #Install OpenCV from source
-#WORKDIR ${HOME}
-#COPY ./scripts/install-opencv-from_source.sh ${HOME}
-#RUN ${HOME}/install-opencv-from_source.sh
+WORKDIR ${HOME}
+COPY ./scripts/install-opencv-from_source.sh ${HOME}
+RUN ${HOME}/install-opencv-from_source.sh
 
 
 WORKDIR /ncsdk
