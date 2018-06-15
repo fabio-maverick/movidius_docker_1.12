@@ -1,19 +1,19 @@
 #! /bin/bash
 
 
-echo ""
-echo "************************ Please confirm *******************************"
-echo " Installing OpenCV from source may take a long time. "
-echo " Select n to skip OpenCV installation or y to install it." 
-echo " Note that if you installed opencv via pip3 it will be uninstalled"
-read -p " Continue installing OpenCV (y/n) ? " CONTINUE
-if [[ "$CONTINUE" == "y" || "$CONTINUE" == "Y" ]]; then
-	echo ""; 
-	echo "Uninstalling pip installation";
-	sudo pip3 uninstall opencv-contrib-python
-	sudo pip3 uninstall opencv-python  
-	echo "";
-	echo "Installing OpenCV"; 
+#echo ""
+#echo "************************ Please confirm *******************************"
+#echo " Installing OpenCV from source may take a long time. "
+#echo " Select n to skip OpenCV installation or y to install it."
+#echo " Note that if you installed opencv via pip3 it will be uninstalled"
+#read -p " Continue installing OpenCV (y/n) ? " CONTINUE
+#if [[ "$CONTINUE" == "y" || "$CONTINUE" == "Y" ]]; then
+#	echo "";
+#	echo "Uninstalling pip installation";
+#	sudo pip3 uninstall opencv-contrib-python
+#	sudo pip3 uninstall opencv-python
+#	echo "";
+	echo "Installing OpenCV";
 	echo "";
 	sudo apt-get update -y && sudo apt-get upgrade -y
 	sudo apt-get install -y build-essential cmake pkg-config
@@ -43,9 +43,8 @@ if [[ "$CONTINUE" == "y" || "$CONTINUE" == "Y" ]]; then
 	make -j4
 	sudo make install
 	sudo ldconfig
-else
-	echo "";
-	echo "Skipping OpenCV installation";
-	echo "";
-fi
-
+#else
+#	echo "";
+#	echo "Skipping OpenCV installation";
+#	echo "";
+#fi

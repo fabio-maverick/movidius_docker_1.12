@@ -1,4 +1,5 @@
-FROM ubuntu:16.04
+FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
+#FROM ubuntu:16.04
 MAINTAINER Fabio Magalhaes<fabio.magalhaes@gmail.com>
 
 ENV PYTHONPATH /opt/movidius/mvnc/python:${PYTHONPATH}
@@ -83,7 +84,7 @@ RUN echo 'source /opt/ros/kinetic/setup.bash' >> ${HOME}/.bashrc
 RUN apt-get install -y python-catkin-tools
 
 # To be run by a user after creating a container.
-COPY ./scripts/build_redtail.sh ${HOME}
+COPY ./scripts/build_movidius.sh ${HOME}
 
 # Setup catkin workspace
 ENV CATKIN_WS ${HOME}/catkin_ws

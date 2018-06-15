@@ -22,6 +22,10 @@ if [[ ! -L "${CATKIN_WS}/src/ros_intel_movidius_ncs" ]]; then
     ln -s ${NCSDK_PATH}/ros/packages/ros_intel_movidius_ncs ${CATKIN_WS}/src/
 fi
 
+if [[ ! -L "${CATKIN_WS}/src/ros_intel_movidius_ncs" ]]; then
+    ln -s ${NCSDK_PATH}/ros/packages/object_msgs ${CATKIN_WS}/src/
+fi
+
 #if [[ ! -L "${CATKIN_WS}/src/px4_controller" ]]; then
 #    ln -s ${NCSDK_PATH}/ros/packages/px4_controller ${CATKIN_WS}/src/
 #fi
