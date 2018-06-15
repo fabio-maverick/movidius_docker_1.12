@@ -88,16 +88,17 @@ RUN echo 'source /opt/ros/kinetic/setup.bash' >> ${HOME}/.bashrc
 
 RUN apt-get install -y python-catkin-tools
 
-# To be run by a user after creating a container.
-COPY ./scripts/build_movidius.sh ${HOME}
-RUN sudo chmod +x build_movidius.sh
-
 # Setup catkin workspace
 ENV CATKIN_WS ${HOME}/catkin_ws
 COPY ./scripts/init_workspace.sh ${HOME}
 RUN sudo chmod +x init_workspace.sh
 #RUN ${HOME}/init_workspace.sh
 RUN sudo ./init_workspace.sh
+
+# To be run by a user after creating a container.
+COPY ./scripts/build_movidius.sh ${HOME}
+#RUN sudo chmod +x build_movidius.sh
+
 
 ENV CCACHE_CPP2=1
 ENV CCACHE_MAXSIZE=1G
