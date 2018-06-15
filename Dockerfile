@@ -28,6 +28,7 @@ RUN pip3 install --upgrade pip
 COPY ./scripts/install-opencv-from_source.sh ${HOME}
 #RUN wget https://github.com/fabio-maverick/movidius_docker_1.12/blob/master/run_movidius_nvidia_docker.sh
 #RUN ${HOME}/install-opencv-from_source.sh
+RUN sudo chmod +x install-opencv-from_source.sh
 RUN sudo ./install-opencv-from_source.sh
 
 
