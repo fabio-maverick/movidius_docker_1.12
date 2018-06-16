@@ -3,7 +3,7 @@
 # Copyright (c) 2017, NVIDIA CORPORATION. All rights reserved.
 # Full license terms provided in LICENSE.md file.
 
-MOVIDIUS_PATH=$1
+NCSDK_PATH=$1
 if [[ -z "${NCSDK_PATH}" ]]; then
     echo "First argument is missing."
     echo "Usage  : build_movidius.sh <full_path_to_movidius>"
