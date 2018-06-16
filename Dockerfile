@@ -91,7 +91,7 @@ RUN apt-get install -y python-catkin-tools
 # Setup catkin workspace
 ENV CATKIN_WS ${HOME}/catkin_ws
 COPY ./scripts/init_workspace.sh ${HOME}
-RUN sudo chmod +x init_workspace.sh
+#RUN sudo chmod +x init_workspace.sh
 RUN ${HOME}/init_workspace.sh
 #RUN sudo ./init_workspace.sh
 
